@@ -1,4 +1,4 @@
-package tmpTask;
+package JavaModificators.Final.task1Yandex;
 
 import java.util.ArrayList;
 

@@ -1,17 +1,9 @@
-package tmpTask;
+package ObjectClassAndItsMethods.task1Yandex;
 
 import java.util.ArrayList;
 
 public class Practicum {
     public static void main(String[] args) {
-        PostComment comment1 = new PostComment();
-        comment1.setText("Отличная статья!");
-        comment1.setWhoLiked(new String[] { "Lera93", "934Vasya1" });
-        System.out.println(comment1);
-    }
-
-
-    /*public void practicumAction(){
         Post post = new Post();
         post.setTitle("Почему второй язык программирования выучить проще, чем первый?");
         post.setContent("Если вы научились водить автомобиль на механике, " +
@@ -40,5 +32,5 @@ public class Practicum {
         post.setComments(comments);
 
         System.out.println(post);
-    }*/
+    }
 }

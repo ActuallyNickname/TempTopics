@@ -1,8 +1,9 @@
-package tmpTask;
+package ObjectClassAndItsMethods.task1Yandex;
 
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Post {
     private String title; // заголовок
@@ -26,16 +27,33 @@ public class Post {
         this.comments = comments;
     }
 
-   /* @Override
+    @Override
     public String toString() {
-       return "Post{title= '" + title + "', content.length=" + content.length() +
-               + ", tags=" + Arrays.toString(tags) +"}";
-    }*/
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName() + "{");
+        sb.append("title='");
+        sb.append((title == null) ? ("null'") : (title + "', ")    );
+        sb.append("content.length='");
+        sb.append((content.isEmpty()) ? ("null'") : (content.length() + "', ")     );
+        sb.append("tags=");
+        sb.append((tags == null) ? ("null") : Arrays.toString(tags) + ", ");
+        sb.append("comments=");
+        sb.append((comments == null) ? ("null") : comments);
+        sb.append("}");
+        return sb.toString();
+    }
 
-        /* Вывод должен получиться таким:
-    Post{title='xxx', content.length='x', tags=[x,x],
-    comments=[PostComment{text='x!', whoLiked=[x, x]},.length()
-    PostComment{text='x', whoLiked=[x,x]},
-    PostComment{text='x', whoLiked=null}]} */
+    //Alt + Ins -> "hashCode() and equals()"
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Post post = (Post) o;
+        return Objects.equals(title, post.title) && Objects.equals(content, post.content) && Objects.deepEquals(tags, post.tags) && Objects.equals(comments, post.comments);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, content, Arrays.hashCode(tags), comments);
+    }
 }

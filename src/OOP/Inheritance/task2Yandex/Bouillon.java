@@ -1,9 +1,17 @@
 package OOP.Inheritance.task2Yandex;
 
 public class Bouillon extends SoupBase {
-    double meat;
+    protected double meat;
 
-    // реализуйте необходимые конструкторы
+    public Bouillon(double water, double salt, double meat) {
+        super(water, salt);
+        this.meat = meat;
+    }
+
+    public Bouillon(SoupBase soupBase, double meat) {
+        super (soupBase.water, soupBase.salt);
+        this.meat = meat;
+    }
 
     @Override
     public void printIngredients() {

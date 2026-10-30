@@ -1,10 +1,30 @@
 package OOP.Inheritance.task2Yandex;
 
 public class PotatoSoup extends Bouillon {
-    double potato;
-    double carrot;
+    protected double potato;
+    protected double carrot;
 
-    // реализуйте необходимые конструкторы
+
+    public PotatoSoup(Bouillon bouillon,
+                      double potato, double carrot) {
+        super(bouillon.water, bouillon.salt, bouillon.meat);
+        this.carrot = carrot;
+        this.potato = potato;
+    }
+
+    public PotatoSoup(SoupBase soupBase, double meat,
+                      double potato, double carrot) {
+        super(soupBase.water, soupBase.salt, meat);
+        this.carrot = carrot;
+        this.potato = potato;
+    }
+
+    public PotatoSoup(double water, double salt,
+                      double meat, double potato, double carrot) {
+        super(water, salt, meat);
+        this.carrot = carrot;
+        this.potato = potato;
+    }
 
     @Override
     public void printIngredients() {

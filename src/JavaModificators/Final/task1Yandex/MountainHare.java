@@ -1,4 +1,4 @@
-package tmpTask;
+package JavaModificators.Final.task1Yandex;
 
 public class MountainHare {
     private static String color = "белый";
